@@ -16,9 +16,9 @@ var renderMessage = (message) => {
 
 var renderBookmark = (data) => {
   if(data.isUsed) {
-    renderMessage("This page used Pagefly.")
+    renderMessage("This page used PageFly.")
   } else {
-    renderMessage("This page does not use Pagefly.")
+    renderMessage("This page does not use PageFly.")
   }
 }
 

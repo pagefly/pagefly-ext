@@ -9,12 +9,7 @@ var extractTags = () => {
 		isUsed : false
 	}
 
-	var signId = document.querySelector("#__pf");
-	if(signId) {
-		data.isUsed = true;
-	} else {
-		data.isUsed = false;
-	}
+	data.isUsed = (document.querySelector("#__pf")? true : false);
 
 	return data;
 }

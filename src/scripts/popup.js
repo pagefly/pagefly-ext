@@ -15,8 +15,8 @@ var renderMessage = (message) => {
 }
 
 var renderBookmark = (data) => {
-  if(data.isUsed) {
-    renderMessage("This page used PageFly.")
+  if(data && data.isUsed) {
+    renderMessage("This page is using PageFly.")
   } else {
     renderMessage("This page does not use PageFly.")
   }
@@ -24,7 +24,7 @@ var renderBookmark = (data) => {
 
 ext.tabs.query({active: true, currentWindow: true}, function(tabs) {
   var activeTab = tabs[0];
-  chrome.tabs.sendMessage(activeTab.id, { action: 'process-page' }, renderBookmark);
+  chrome.tabs.sendMessage(activeTab.id, { action: 'process-page', activeTab }, renderBookmark);
 });
 
 var optionsLink = document.querySelector(".js-options");

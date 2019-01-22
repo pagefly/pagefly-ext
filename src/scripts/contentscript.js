@@ -6,11 +6,11 @@ var extractTags = () => {
   if (!url || !url.match(/^http/) || !url.match(/^https/))
     return
 
-	var data = {
-		isUsed : false
-	}
+  var data = {
+    isUsed: false
+  }
 
-  data.isUsed = (document.querySelector('#__pf'))
+  data.isUsed = document.querySelector('#__pf') ? 'PageFly' : document.querySelector('.shogun-root') ? 'Shogun' : document.querySelector('.gempage') ? 'Gempage' : ''
 
   return data
 }
